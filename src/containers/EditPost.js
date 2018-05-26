@@ -37,6 +37,7 @@ class EditPost extends Component {
       <div className="container">
         <div className="edit-post-section">
           <div className="col-sm-12">
+            <Link className="back-btn" to="/"> &#171; Tillbaka</Link>
             <form className="edit-form" onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <input 
@@ -62,7 +63,6 @@ class EditPost extends Component {
                 <button className="btn col-sm-12 edit-btn" >Spara ändring</button>
               </div>
             </form>
-            <Link className="back-btn" to="/"> &#171; Tillbaka</Link>
           </div>
         </div>
       </div>

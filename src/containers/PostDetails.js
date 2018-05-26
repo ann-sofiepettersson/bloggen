@@ -33,6 +33,7 @@ class PostDetails extends Component {
       <div className="container">
         <div className="post-detail-section">
           <div className="col-sm-12">
+            <Link className="back-btn" to="/"> &#171; Tillbaka</Link>
             <div className="post-detail">
               <h2>{post.title}</h2>
               <p>{post.body}</p>
@@ -43,7 +44,6 @@ class PostDetails extends Component {
               {this.renderComments()}
             </div>
           </div>
-            <Link className="back-btn" to="/"> &#171; Tillbaka</Link>
         </div>
       </div>
     );

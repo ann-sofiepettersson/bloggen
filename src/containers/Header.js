@@ -23,11 +23,11 @@ class Header extends Component {
                 </li>
                 {this.props.user === null ? (
                   <li>
-                    <Link to="/login">Login </Link>
+                    <Link to="/login">Logga in </Link>
                   </li>
                 ) : (
                   <li className="pull-right">
-                    <Link to="/login" onClick={() => this.props.logout()}>Logout </Link>
+                    <Link to="/login" onClick={() => this.props.logout()}>Logga ut </Link>
                   </li>
                 )}
               </ul>

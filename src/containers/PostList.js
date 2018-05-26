@@ -52,11 +52,11 @@ class PostList extends Component {
               {<p>{post.body}</p>}
             </div>
             <div>
-              {post.uid === this.props.user.uid &&(
+              {(post.uid === this.props.user.uid || this.props.user.uid === "7ODVPUzxc8fXoJqKFlvG4Ht4qwo2") &&(
                 <div className="button-group">
-                  <button className="btn btn-xs delete-btn pull-right" onClick={() => this.props.deletePost(key)}>Delete</button>
+                  <button className="btn btn-xs delete-btn pull-right" onClick={() => this.props.deletePost(key)}>Ta bort</button>
                   <button className="btn btn-xs edit-post-btn ">
-                    <Link to={`/${key}/editPost`}>Edit</Link>
+                    <Link to={`/${key}/editPost`}>Ändra</Link>
                   </button>
                 </div>
               )}
@@ -76,10 +76,10 @@ class PostList extends Component {
                 <div className="form-group">
                   <input 
                     value={this.state.title}
-                    className="form-control no-border"
+                    className="form-control no-border post-title"
                     type="text" 
                     name="title" 
-                    placeholder="Title" 
+                    placeholder="Titel" 
                     onChange={this.handleChange}
                     required />
                 </div>
@@ -89,12 +89,12 @@ class PostList extends Component {
                     value={this.state.body}
                     type="text"
                     name="body"
-                    placeholder="Body"
+                    placeholder="Text"
                     className="form-control no-border"
                     required />
                 </div>
                 <div className="form-group">
-                  <button className="btn post-btn" >Post</button>
+                  <button className="btn post-btn" >Spara</button>
                 </div>
               </form>
             </div>

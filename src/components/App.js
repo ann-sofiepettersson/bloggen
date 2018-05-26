@@ -17,18 +17,17 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Loading>
-          <div>
-            
-              <Switch>
-                <Route exact path="/login" component={Login}/>
-                <Auth>
-                  <Header/>
-                  <Route exact path="/" component={PostList}/>
-                  <Route exact path="/:id" component={PostDetails}/>
-                  <Route exact path="/:id/editPost" component={EditPost}/>
-                  {/* <Route exact path="/:id/editComment" component={EditComment}/> */}
-                </Auth>
-              </Switch>
+          <div className="mainContainer">
+            <Switch>
+              <Route exact path="/login" component={Login}/>
+              <Auth>
+                <Header/>
+                <Route exact path="/" component={PostList}/>
+                <Route exact path="/:id" component={PostDetails}/>
+                <Route exact path="/:id/editPost" component={EditPost}/>
+                {/* <Route exact path="/:id/editComment" component={EditComment}/> */}
+              </Auth>
+            </Switch>
             <Footer/>
           </div>
         </Loading>

@@ -52,7 +52,7 @@ class Login extends Component {
           </div>
           
           <div className="col-sm-12 login-text">
-            <h4><b className="login-b">Login</b> or <b className="signup-b">Sign up</b> with email and password!</h4>
+            <h4><b className="login-b">Logga in</b> eller <b className="signup-b">Registrera dig</b> med e-post och lösenord!</h4>
           </div>
             {/* LOGIN */}
             <div className="col-sm-6">
@@ -60,7 +60,7 @@ class Login extends Component {
                 <div className="form-group">
                   <input 
                     className="form-control" 
-                    placeholder="Email"
+                    placeholder="E-post"
                     type="email" 
                     name="email" 
                     onChange={e => this.setState({email: e.target.value})} />
@@ -68,7 +68,7 @@ class Login extends Component {
                 <div className="form-group">
                   <input 
                     className="form-control" 
-                    placeholder="Password"
+                    placeholder="Lösenord"
                     type="password" 
                     name="password" 
                     onChange={e => this.setState({password: e.target.value})} />
@@ -80,7 +80,7 @@ class Login extends Component {
                   <button 
                     className="btn btn-lg login-btn pull-left" 
                     onClick={(e) => {this.login(e);}}
-                    >Login</button>
+                    >Logga in</button>
                 </div>   
               </form>
             </div>
@@ -91,7 +91,7 @@ class Login extends Component {
                 <div className="form-group">
                   <input 
                     className="form-control" 
-                    placeholder="Email"
+                    placeholder="E-post"
                     type="email" 
                     name="email" 
                     onChange={e => this.setState({email: e.target.value})} />
@@ -99,7 +99,7 @@ class Login extends Component {
                 <div className="form-group">
                   <input 
                     className="form-control" 
-                    placeholder="Password"
+                    placeholder="Lösenord"
                     type="password" 
                     name="password" 
                     onChange={e => this.setState({password: e.target.value})} />
@@ -109,7 +109,7 @@ class Login extends Component {
                   <button 
                     className="btn btn-lg signup-btn pull-right" 
                     onClick={(e) => {this.signUp(e);}}
-                    >Sign up</button>
+                    >Registrera</button>
                 </div>  
               </form>
             </div>
@@ -118,7 +118,7 @@ class Login extends Component {
           <div className="col-sm-12 social-media">
             <button 
               className="btn btn-danger btn-lg google-btn" 
-              onClick={this.props.googleLogin}>Login with Google</button>
+              onClick={this.props.googleLogin}>Logga in med Google</button>
           </div>
 
         </div>
