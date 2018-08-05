@@ -1,4 +1,4 @@
-import {  USER_STATUS, POSTS_STATUS } from '../actions/actionTypes';
+import {  USER_STATUS, POSTS_STATUS, USERLIST_STATUS } from '../actions/actionTypes';
 
 export default function(state = {}, action) {
   switch (action.type) {
@@ -6,6 +6,8 @@ export default function(state = {}, action) {
       return { ...state, posts: action.payload };
     case USER_STATUS:
       return { ...state, user: action.payload };
+    // case USERLIST_STATUS:
+    //   return { ...state, userlist: action.payload };
     default:
       return state;
   }

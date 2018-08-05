@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Post = ({children}) => (
+const Post = (props) => (
 
   <div className="post-list-item">
-    <div>{children}</div>
+    <div>{props.children}</div>
   </div>
 )
   

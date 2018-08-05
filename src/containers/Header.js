@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import { getUser, logout } from '../actions/userActions';
 
 class Header extends Component {
+
   render() {
+    
     return (
       <div className="bg-image">
         <nav className="navbar navbar-default">
@@ -18,6 +20,9 @@ class Header extends Component {
             
             <div className="collapse navbar-collapse" id="blogNav">
               <ul className="nav navbar-nav navbar-right">
+                <li className="user-list">
+                  {/* <Link to="/users" >Hantera användare</Link> */}
+                </li>
                 <li className="user-name">
                   <span className="user" >{this.props.user.displayName === null ? this.props.user.email : this.props.user.displayName}</span>
                 </li>

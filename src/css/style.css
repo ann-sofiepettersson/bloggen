@@ -16,10 +16,8 @@ body {
   height: 100%;
 }
 
-.mainContainer {
-  min-height: 100%;
-  margin-bottom: -100px;
-  padding-bottom: 100px;
+.container {
+  min-height: 500px;
 }
 
 form {
@@ -36,6 +34,14 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.mainContainer {
+  min-height: 100%;
 }
 
 .post-section, .post-detail-section, .edit-post-section {
@@ -403,6 +409,46 @@ a:hover {
   }
 }
 
+/* USERS */
+
+.user-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-33 {
+  width: 33%;
+  flex-wrap: wrap;
+}
+
+.col-33:not(:first-child) {
+  text-align: right;
+}
+
+input[type="checkbox"] {
+  margin: 4px 10px 0 7px;
+  position: absolute
+}
+
+.admin-label {
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 450px) {
+ .col-33:first-child {
+   width: 100%;
+ }
+
+ .col-33:not(:first-child) {
+    width: 50%;
+ }
+
+ .col-33:nth-child(2) {
+   text-align: left;
+ }
+}
+
+
 /* FOOTER */
 
 .footer {
@@ -411,7 +457,7 @@ a:hover {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 0;
+  
 }
 
 

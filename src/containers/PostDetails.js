@@ -28,7 +28,7 @@ class PostDetails extends Component {
   render() {
 
     const { post } = this.props;
-    console.log(this.renderComments());
+    
     return (
       <div className="container">
         <div className="post-detail-section">

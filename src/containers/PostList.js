@@ -1,3 +1,5 @@
+// TODO - Change position on edit button
+
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
@@ -7,7 +9,6 @@ import { getPosts, savePost, deletePost } from '../actions/blogActions';
 import { getUser } from '../actions/userActions';
 
 import Post from '../components/Post';
-
 
 class PostList extends Component {
 
@@ -38,7 +39,9 @@ class PostList extends Component {
 
 
   renderPosts() {
-    return _.map(this.props.posts, (post, key) => {
+   console.log(this.props.user);
+    return _.map(this.props.posts, (post, key, arr) => {
+      console.log(arr)
       return (
         <Post key={key}>
             <div className="post-title">
@@ -49,7 +52,7 @@ class PostList extends Component {
               </button>
             </div>
             <div className="post-body">
-              {<p>{post.body}</p>}
+              <p id="text" className="text">{post.body}</p>
             </div>
             <div>
               {(post.uid === this.props.user.uid || this.props.user.uid === "7ODVPUzxc8fXoJqKFlvG4Ht4qwo2") &&(
@@ -64,9 +67,13 @@ class PostList extends Component {
         </Post>
       );
     });
+   
   }
 
+ 
+
   render() {
+
     return (
       <div className="container">
         <div className="post-section">

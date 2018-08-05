@@ -10,6 +10,8 @@ import Auth from '../containers/Auth';
 import PostDetails from '../containers/PostDetails';
 import EditPost from '../containers/EditPost';
 import Footer from './Footer';
+// import UserList from './../containers/UserList';
+// import EditUser from './../containers/EditUser';
 
 
 class App extends Component {
@@ -23,9 +25,11 @@ class App extends Component {
               <Auth>
                 <Header/>
                 <Route exact path="/" component={PostList}/>
+                {/* <Route exact path="/userList" component={UserList}/> */}
+                {/* <Route exact path="/users:id/editUser" component={EditUser}/> */}
                 <Route exact path="/:id" component={PostDetails}/>
                 <Route exact path="/:id/editPost" component={EditPost}/>
-                {/* <Route exact path="/:id/editComment" component={EditComment}/> */}
+                
               </Auth>
             </Switch>
             <Footer/>

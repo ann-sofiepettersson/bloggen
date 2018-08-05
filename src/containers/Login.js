@@ -14,7 +14,6 @@ class Login extends Component {
   
   componentWillMount() {
     if (this.props.user !== null) {
-      console.log(this.props.history);
       this.props.history.push('/');
     }
   }
