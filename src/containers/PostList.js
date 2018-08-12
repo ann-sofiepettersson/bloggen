@@ -17,6 +17,13 @@ class PostList extends Component {
     body: ''
   }
 
+
+  
+  // componentWillMount() {
+  //   this.props.getPosts();
+  // }
+  
+
   handleChange = (e) => {
     this.setState({
       [e.target.name] : e.target.value
@@ -42,23 +49,28 @@ class PostList extends Component {
    console.log(this.props.user);
     return _.map(this.props.posts, (post, key, arr) => {
       console.log(arr)
+      console.log(post)
       return (
         <Post key={key}>
             <div className="post-title">
-              <button className="grow">
-                <Link to={`/${key}`}>
-                  {post.title} 
-                </Link>
-              </button>
+              <h4>{post.title}</h4> 
             </div>
             <div className="post-body">
               <p id="text" className="text">{post.body}</p>
             </div>
-            <div>
+            <div className="col-sm-6 btn-area">
+              <button className="btn btn-xs btn-green">
+                <Link to={`/${key}`}>
+                  Kommentarer 
+                </Link>
+              </button>
+            </div>
+            <div className="col-sm-6">
               {(post.uid === this.props.user.uid || this.props.user.uid === "7ODVPUzxc8fXoJqKFlvG4Ht4qwo2") &&(
                 <div className="button-group">
+                
                   <button className="btn btn-xs delete-btn pull-right" onClick={() => this.props.deletePost(key)}>Ta bort</button>
-                  <button className="btn btn-xs edit-post-btn ">
+                  <button className="btn btn-xs edit-post-btn pull-right">
                     <Link to={`/${key}/editPost`}>Ändra</Link>
                   </button>
                 </div>
@@ -70,7 +82,6 @@ class PostList extends Component {
    
   }
 
- 
 
   render() {
 
@@ -101,7 +112,7 @@ class PostList extends Component {
                     required />
                 </div>
                 <div className="form-group">
-                  <button className="btn post-btn" >Spara</button>
+                  <button className="btn post-btn brown-btn" >Spara</button>
                 </div>
               </form>
             </div>

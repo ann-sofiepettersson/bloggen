@@ -41,7 +41,7 @@ class CommentForm extends Component {
             
           </div>
           <div className="form-group">
-            <button className="btn btn-xs comment-btn">Skicka kommentar</button>
+            <button className="btn btn-xs btn-green">Skicka kommentar</button>
           </div>
         </form>
       </div>

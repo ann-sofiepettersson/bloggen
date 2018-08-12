@@ -6,8 +6,8 @@ export default function(state = {}, action) {
       return { ...state, posts: action.payload };
     case USER_STATUS:
       return { ...state, user: action.payload };
-    // case USERLIST_STATUS:
-    //   return { ...state, userlist: action.payload };
+    case USERLIST_STATUS:
+      return { ...state, userlist: action.payload };
     default:
       return state;
   }

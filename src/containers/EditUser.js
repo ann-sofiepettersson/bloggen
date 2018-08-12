@@ -4,13 +4,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getUserList, editUserType } from '../actions/userActions';
+import { getUserList, editUser } from '../actions/handleUserActions';
 
 class EditUser extends Component {
 
   state = {
-    email: this.props.userList.email,
-    userType: this.props.userList.userType
+    email: this.props.userlist.email,
+    userType: this.props.userlist.userType
   }
 
   handleChange = (e) => {
@@ -32,10 +32,11 @@ class EditUser extends Component {
       email: '',
       userType: ''
     });
-    this.props.history.push('/users');
+    this.props.history.push('/userList');
   }
 
   render() {
+    
     return (
       <div>
         <div className="edit-post-section">
@@ -74,9 +75,10 @@ class EditUser extends Component {
 }
 
 function mapStateToProps(state, ownProps){
+  
   return {
-    users: state.users[ownProps.match.params.id]
-  }
+    userlist: state.userlist[ownProps.match.params.id]
+  }  
 }
 
-export default connect(mapStateToProps, {getUserList, editUserType})(EditUser);
+export default connect(mapStateToProps, {getUserList, editUser})(EditUser);

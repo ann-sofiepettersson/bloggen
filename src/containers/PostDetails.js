@@ -12,12 +12,13 @@ class PostDetails extends Component {
   renderComments() {
     const { post } = this.props;
     return _.map(post.comments, (comment, key) => {
+      console.log(post);
       return (
         <Comment key={key} id={key} >
           {comment.commentBody}
           {comment.uid === this.props.user.uid &&(
             <div className="button-group">
-              <button className="btn delete-btn btn-xs pull-right" onClick={() => this.props.deleteComment(this.props.match.params.id, key)}>Delete</button>
+              <button className="btn delete-btn btn-xs pull-right" onClick={() => this.props.deleteComment(this.props.match.params.id, key)}>Ta bort</button>
             </div>
           )}
         </Comment>
@@ -28,8 +29,9 @@ class PostDetails extends Component {
   render() {
 
     const { post } = this.props;
-    
+    console.log(this.props);
     return (
+      
       <div className="container">
         <div className="post-detail-section">
           <div className="col-sm-12">
@@ -39,7 +41,7 @@ class PostDetails extends Component {
               <p>{post.body}</p>
             </div>
             <div className="comment-section">
-              <h4>Comments</h4>
+              <h4>Kommentarer</h4>
               <CommentForm id={this.props.match.params.id} />
               {this.renderComments()}
             </div>

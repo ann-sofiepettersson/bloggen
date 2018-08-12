@@ -21,7 +21,7 @@ class Header extends Component {
             <div className="collapse navbar-collapse" id="blogNav">
               <ul className="nav navbar-nav navbar-right">
                 <li className="user-list">
-                  {/* <Link to="/users" >Hantera användare</Link> */}
+                  {/* <Link to="/userList" >Hantera användare</Link> */}
                 </li>
                 <li className="user-name">
                   <span className="user" >{this.props.user.displayName === null ? this.props.user.email : this.props.user.displayName}</span>

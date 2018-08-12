@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 import posts from '../reducers/blogReducer';
 import user from '../reducers/userReducer';
 import loading from '../reducers/loadingReducer';
-import users from '../reducers/userReducer';
+import userlist from '../reducers/handleUserReducer';
 
 
 const rootReducer = combineReducers({   
@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   user,
   loading,
   // TODO
-  users
+  userlist
 });
 
 const store = createStore(

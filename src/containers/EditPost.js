@@ -60,7 +60,7 @@ class EditPost extends Component {
                   required />
               </div>
               <div className="form-group">
-                <button className="btn col-sm-12 edit-btn" >Spara ändring</button>
+                <button className="btn col-sm-12 btn-green" >Spara ändring</button>
               </div>
             </form>
           </div>
