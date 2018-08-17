@@ -24,7 +24,7 @@ npm start
 
 ## Språk och tekniker använda
 
-* Språk - Javascript, HTML, CSS, Lodash,  React-Router
+* Språk - Javascript, HTML, CSS
 * Bibliotek -  React, Redux, Bootstrap, Lodash
 * Middleware - Redux-Thunk
 * Routes - React-Router 
