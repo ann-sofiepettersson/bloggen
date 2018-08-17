@@ -14,10 +14,19 @@ class AddUser extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.emailSignup(this.state.email, this.state.password)
-    // .catch(err => {
-    //   this.setState({signupError: err.message});
-    // })
+      
+      const newUser = {
+        email: this.state.email,
+        password: this.state.password,
+        userType: "Standard"
+      };
+    
+    this.props.saveNewUser(newUser);
+
+    this.setState({
+      email: '',
+      password: ''
+    })
     this.props.history.push('/userList');
   }
 

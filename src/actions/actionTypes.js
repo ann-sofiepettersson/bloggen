@@ -9,3 +9,5 @@ export const USER_STATUS = 'USER_STATUS';
 export const GET_USERLIST = 'GET_USERLIST';
 
 export const USERLIST_STATUS = 'USERLIST_STATUS';
+
+export const ADMIN_USERS = 'ADMIN_USERS';

@@ -46,3 +46,16 @@ export function editUser(id, edituser) {
 export function deleteUser(id) {
   return dispatch => dbUsers.child(id).remove();
 }
+
+export function getAdminUsers() {
+  return dispatch => {
+    dbUsers.ref.orderByChild('userType')
+    .equalTo('Admin')
+    .on('value', snapshot => {
+      dispatch({
+        type: actions.ADMIN_USERS,
+        payload: snapshot.val()
+      });
+    })
+  }
+}

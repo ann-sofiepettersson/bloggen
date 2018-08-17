@@ -3,17 +3,16 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { getUser } from '../actions/userActions';
 import { getPosts } from '../actions/blogActions';
-import { getUserList } from '../actions/handleUserActions';
+import { getUserList, getAdminUsers } from '../actions/handleUserActions';
 
 class Loading extends Component {
 
   componentWillMount() {
    
     const {userLoading, postsLoading, userlistLoading} = this.props;
-    console.log(userLoading);
     if (userLoading === undefined) {
       this.props.getUser();
-      
+      this.props.getAdminUsers();
     }
 
     if (postsLoading === undefined) {
@@ -37,11 +36,11 @@ class Loading extends Component {
   render() {
 
     const {userLoading, postsLoading, children} = this.props;
-    console.log(children);
+   
     if ((!userLoading && !postsLoading) || this.props.user === null) {
       return <div>{children}</div>
     } else {
-      return <div><h2>Loading...</h2></div>
+      return <div className="loading"><span><i className="fa fa-spinner fa-spin" ></i></span></div>
     }
     
   }
@@ -56,4 +55,4 @@ function mapStateToProps(state){
   }
 }
 
-export default withRouter(connect(mapStateToProps, {getUser, getPosts, getUserList})(Loading));
+export default withRouter(connect(mapStateToProps, {getUser, getPosts, getUserList, getAdminUsers})(Loading));

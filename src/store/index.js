@@ -9,14 +9,15 @@ import posts from '../reducers/blogReducer';
 import user from '../reducers/userReducer';
 import loading from '../reducers/loadingReducer';
 import userlist from '../reducers/handleUserReducer';
+import adminuser from '../reducers/handleUserReducer';
 
 
 const rootReducer = combineReducers({   
   posts,
   user,
   loading,
-  // TODO
-  userlist
+  userlist,
+  adminuser
 });
 
 const store = createStore(

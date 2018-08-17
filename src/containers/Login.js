@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { googleLogin, emailLogin, emailSignup } from './../actions/userActions';
-import ErrorAlert from '../components/ErrorAlert';
+import Validation from '../components/Validation';
 
 class Login extends Component {
 
@@ -42,7 +42,7 @@ class Login extends Component {
   
   
   render() {
-    console.log(this.state);
+  
     return (
       <div className="container">
         <div className="row text-center">
@@ -72,7 +72,7 @@ class Login extends Component {
                     name="password" 
                     onChange={e => this.setState({password: e.target.value})} />
                 </div>
-                {this.state.loginError && <ErrorAlert>Your username/password is incorrect</ErrorAlert>}
+                {this.state.loginError && <Validation>Your username/password is incorrect</Validation>}
                 
 
                 <div className="form-group">
@@ -103,7 +103,7 @@ class Login extends Component {
                     name="password" 
                     onChange={e => this.setState({password: e.target.value})} />
                 </div>
-                {this.state.signupError && <ErrorAlert>{this.state.signupError}</ErrorAlert>}
+                {this.state.signupError && <Validation>{this.state.signupError}</Validation>}
                 <div className="form-group">
                   <button 
                     className="btn btn-lg signup-btn pull-right" 

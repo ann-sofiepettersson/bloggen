@@ -9,27 +9,27 @@ import { getUser } from '../actions/userActions';
 
 class PostDetails extends Component {
 
-  renderComments() {
-    const { post } = this.props;
-    return _.map(post.comments, (comment, key) => {
-      console.log(post);
-      return (
-        <Comment key={key} id={key} >
-          {comment.commentBody}
-          {comment.uid === this.props.user.uid &&(
-            <div className="button-group">
-              <button className="btn delete-btn btn-xs pull-right" onClick={() => this.props.deleteComment(this.props.match.params.id, key)}>Ta bort</button>
-            </div>
-          )}
-        </Comment>
-      );
-    });
-  }
+  // renderComments() {
+  //   const { post } = this.props;
+  //   return _.map(post.comments, (comment, key) => {
+  //     // console.log(post);
+  //     return (
+  //       <Comment key={key} id={key} >
+  //         {comment.commentBody}
+  //         {comment.uid === this.props.user.uid &&(
+  //           <div className="button-group">
+  //             <button className="btn delete-btn btn-xs pull-right" onClick={() => this.props.deleteComment(this.props.match.params.id, key)}>Ta bort</button>
+  //           </div>
+  //         )}
+  //       </Comment>
+  //     );
+  //   });
+  // }
 
   render() {
 
     const { post } = this.props;
-    console.log(this.props);
+    // console.log(this.props);
     return (
       
       <div className="container">
@@ -37,13 +37,13 @@ class PostDetails extends Component {
           <div className="col-sm-12">
             <Link className="back-btn" to="/"> &#171; Tillbaka</Link>
             <div className="post-detail">
-              <h2>{post.title}</h2>
-              <p>{post.body}</p>
+              {/* <h2>{post.title}</h2> */}
+              {/* <p>{post.body}</p> */}
             </div>
             <div className="comment-section">
               <h4>Kommentarer</h4>
               <CommentForm id={this.props.match.params.id} />
-              {this.renderComments()}
+              {/* {this.renderComments()} */}
             </div>
           </div>
         </div>

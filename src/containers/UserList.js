@@ -7,16 +7,10 @@ import User from '../components/User';
 import { getUserList, deleteUser } from '../actions/handleUserActions';
 
 class UserList extends Component {
-
-  // componentDidMount() {
-  //   this.props.getUserList();
-  // }
-  
   
   renderUsers = () => {
-    return _.map(this.props.userlist, (list, key, arr) => {
-      console.log(arr.displayName);
-      console.log(list);
+    return _.map(this.props.userlist, (list, key) => { 
+    
       return (
       <User key={key}>
         <div >

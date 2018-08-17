@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-// import _ from 'lodash';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -32,7 +31,7 @@ class EditUser extends Component {
       email: '',
       userType: ''
     });
-    this.props.history.push('/userList');
+    this.props.history('/userList');
   }
 
   render() {
@@ -54,17 +53,21 @@ class EditUser extends Component {
                   required />
               </div>
               <div className="form-group">
-                <textarea
+              <select
                   onChange={this.handleChange}
                   value={this.state.userType}
-                  type="text"
+                  // type="text"
                   name="userType"
-                  placeholder="Body"
-                  className="form-control edit-post-body no-border"
-                  required />
+                  // placeholder="Typ av användare"
+                  className="form-control no-border"
+                  required >
+                  <option value="Standard">Standard</option>
+                  <option value="Admin">Admin</option>
+                  
+                  </select>
               </div>
               <div className="form-group">
-                <button className="btn col-sm-12 edit-btn" >Spara ändring</button>
+                <button className="btn col-sm-12 btn-green" >Spara ändring</button>
               </div>
             </form>
           </div>

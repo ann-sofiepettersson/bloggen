@@ -16,19 +16,7 @@ export function emailLogin(email, password) {
 }
 
 export function emailSignup(email, password) {
-  return dispatch => {auth.createUserWithEmailAndPassword(email, password)
-    .then(user => {
-      
-      const newUser = {
-        userId: user.uid,
-        email: user.email,
-        userType: "Standard"
-      };
-    
-      if (user !== null)
-      firebase.database().ref('/userList').push(newUser)
-    });
-  };
+  return dispatch => auth.createUserWithEmailAndPassword(email, password);
 }
 
 export function logout() {
